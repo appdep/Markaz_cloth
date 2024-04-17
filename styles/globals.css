@@ -220,7 +220,7 @@ nav input {
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background-color: #FFECE3;
+  background-color: rgb(86, 85, 85);
 }
 .header-circle .header-img {
   position: absolute;

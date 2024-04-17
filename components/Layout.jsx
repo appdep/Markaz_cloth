@@ -6,7 +6,8 @@ const Layout = ({children}) => {
   return (
     <div className='layout'>
         <Head>
-            <title>Dine Market</title>
+        <link rel='icon' href='shopifylogo.jpg'></link>
+            <title>H.A clothing</title>
         </Head>
         <header>
             <Navbar />

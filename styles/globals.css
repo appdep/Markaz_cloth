@@ -1709,23 +1709,21 @@ top:0px;
 /* Set the width of the scrollbar */
 .products-container::-webkit-scrollbar {
   width: 12px;
-  
-   border-radius: 20px ;
-border:  1px solid black;
+  border-radius: 20px;
+  border: 1px solid black;
 }
 
 .products-container::-webkit-scrollbar-thumb {
-  background-color: black; 
-  border-radius: 6px; 
+  background-color: black;
+  border-radius: 6px;
 }
 
-.products-container{
+.products-container {
   display: flex;
   overflow-x: auto;
-  
-  overflow-y: hidden ;
-  
-
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling for touch devices */
+  overflow-scrolling: touch; /* For cross-browser support */
 }
 
 .products-container {
@@ -1733,6 +1731,7 @@ border:  1px solid black;
   scroll-snap-align: start;
   color: #212121;
 }
+
 
 .prv{
     

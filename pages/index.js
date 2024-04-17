@@ -19,7 +19,7 @@ const Home = ({ products, bannerData, event1Data, event2Data, event3Data }) => {
         event2={event2Data.length && event2Data[0]}
         event3={event3Data.length && event3Data[0]}
       />
-      <FeaturesBanner />
+      
       <Newsletter />
     </>
   );

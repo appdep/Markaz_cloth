@@ -11,7 +11,7 @@ const EventsBanner = ({event1, event2, event3}) => {
     <section className='event-container'>
       <div className='subtitle'>
         <span>PROMOTIONS</span>
-        <h2>Our Promotions Events</h2>
+        
       </div>
 
       <div className='event-banner'>

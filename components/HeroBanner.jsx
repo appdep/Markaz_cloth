@@ -18,8 +18,8 @@ const HeroBanner = ({ heroBanner }) => {
                      <button className='btn' type='button'><CgShoppingCart size={26} />  Start Shopping</button>
                 </Link>
                 
-                <h1>An Industrial Take on Streetwear</h1>
-                <p>Anyone can beat you but no one can beat your outfit as long as you wear Dine outfits.</p>
+                
+                <p>Get garments of every kind such as for mens and Women we have suit and kurtas of different brands.This is the quality of our store to provide you high quality products on lowest rate as much as possible .</p>
                 <span>Sale 70%</span>
             </div>
 

@@ -50,7 +50,7 @@ const Newsletter = () => {
       {!isFormSubmitted ? (
       <form>
         <input type='email' placeholder='Input email address' name="email" value={formData.email} onChange={handleChangeInput}/>
-        <button type='submit' onClick={handleSubmit}>{!loading ? 'Get Started' : 'Wait...'}</button>
+        <button type='submit' onClick={handleSubmit}>{!loading ? 'Get Updates' : 'Wait...'}</button>
         
        
       </form> ) : (

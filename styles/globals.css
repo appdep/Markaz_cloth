@@ -1362,7 +1362,12 @@ top:0px;
   .product-card img {
     width: 337px;
     height: 350px;
-   
+
+   @media screen and (max-width:410px) {
+    width: 300px;
+    height: 345px;
+
+   }
   }
   /*-------------------- FEATURES SECTION ------------------*/
   .features-section .title h1 {

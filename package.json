@@ -29,6 +29,7 @@
     "swiper": "^8.4.7"
   },
   "devDependencies": {
-    "@babel/preset-react": "^7.18.6"
+    "@babel/preset-react": "^7.18.6",
+    "eslint-plugin-next": "^0.0.0"
   }
 }

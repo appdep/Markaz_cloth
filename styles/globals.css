@@ -374,6 +374,7 @@ nav input {
 .Allproduct-card img {
   width: 100%;
   height: 20rem;
+  
   background-color: #b2afaf;
  @media screen and (max-width: 650px) {
    height: 12rem;
@@ -418,7 +419,7 @@ nav input {
   border: 1px solid black;
   background-color: #474747;
   cursor: pointer;
- 
+  margin: 5px;
   &:hover{
     border:none;
     background-color: #212121;
@@ -1305,10 +1306,12 @@ top:0px;
   top:0px;
 
   }
-  .products-outer-container,
+  
   .event-container, .footer {
     padding: 1rem 2rem;
    
+  }.products-outer-container{
+     padding: 3.3rem 2rem;
   }
   .features-section .title,
   .products, .product-desc-container {
@@ -1357,8 +1360,8 @@ top:0px;
   }
   /*-------------------- PRODUCTS SECTION ------------------*/
   .product-card img {
-    width: 300px;
-    height: 320px;
+    width: 337px;
+    height: 350px;
    
   }
   /*-------------------- FEATURES SECTION ------------------*/
@@ -1697,13 +1700,51 @@ top:0px;
   
 }
 
-/*Swiper setting*/
 
- .swiper-button-next {
-   position: absolute;
-   right: 60px;
+/* Set the width of the scrollbar */
+.products-container::-webkit-scrollbar {
+  width: 12px;
+  
+   border-radius: 20px ;
+border:  1px solid black;
+}
 
- }
- .swiper-button-prev{
+.products-container::-webkit-scrollbar-thumb {
+  background-color: black; 
+  border-radius: 6px; 
+}
 
- }
+.products-container{
+  display: flex;
+  overflow-x: auto;
+  
+  overflow-y: hidden ;
+  
+
+}
+
+.products-container {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  color: #212121;
+}
+
+.prv{
+    
+      display: none;
+         @media screen and (max-width:650px){
+          position: absolute;
+          top:15rem;
+          left:1rem;
+         }
+}
+
+.nxt{
+  
+   display: none;
+    @media screen and (max-width:650px){
+      position: absolute;
+      top:15rem;
+      right:1rem;          
+    }
+}

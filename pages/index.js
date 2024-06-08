@@ -20,7 +20,7 @@ const Home = ({ products, bannerData, event1Data, event2Data, event3Data }) => {
         event3={event3Data.length && event3Data[0]}
       />
       
-      <Newsletter />
+      <Newsletter  id='updates'/>
     </>
   );
 };

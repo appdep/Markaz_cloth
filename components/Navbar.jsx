@@ -67,10 +67,10 @@ const Navbar = ({Searchproducts}) => {
             <RiCloseLine  color='black' fontSize={27} className='close_icon' onClick={() => setToggleMenu(false)} />
             <ul className='navbar-smallscreen_links'>
               
-              <Link href='/female' className='nav-li'><li>Female</li></Link>
-              <Link href='/male' className='nav-li'><li>Male</li></Link>
-              <Link href='/kids' className='nav-li'><li>Kids</li></Link>
-              <Link href='/products' className='nav-li'><li>All Products</li></Link>
+              <Link href='/female'  className='nav-li' onClick={() => setToggleMenu(false)}><li>Female</li></Link>
+              <Link href='/male' className='nav-li' onClick={() => setToggleMenu(false)}><li>Male</li></Link>
+              <Link href='/kids' className='nav-li' onClick={() => setToggleMenu(false)}><li>Kids</li></Link>
+              <Link href='/products' className='nav-li' onClick={() => setToggleMenu(false)}><li>All Products</li></Link>
             </ul>
           </div>
         )}

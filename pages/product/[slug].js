@@ -45,19 +45,15 @@ useEffect(() => {
                         <h3>{name}</h3>
                         <span>{tags}</span>   
                     </div>
-                    {/*<div className='size'>
+                    <div className='size'>
                         <p>SELECT SIZE</p>
                         <ul>
                            {size?.map((item,ind)=>(<li  key={ind} onClick={() => setSized(item)} >{item}</li>)) 
                            
                            
-                           }<li>XS</li>
-                            <li>S</li>
-                            <li>M</li>
-                            <li>L</li>
-                            <li>XL</li>
+                           }
                         </ul>
-                        </div>*/}
+                        </div>
                     <div className='quantity-desc'>
                         <h4>Quantity: </h4>
                         <div>

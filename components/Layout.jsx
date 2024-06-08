@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import { Footer, Navbar } from '../components'
+import { Footer, Navbar,Menubar,Menubar2 } from '../components'
 
 const Layout = ({children}) => {
   return (
@@ -17,6 +17,7 @@ const Layout = ({children}) => {
             {children}
         </main>
         <footer>
+           {/*<Menubar2/>*/}
             <Footer />
         </footer>
     </div>

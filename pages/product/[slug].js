@@ -1,27 +1,26 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { client, urlFor } from '../../lib/client'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
-import {CgShoppingCart} from 'react-icons/cg'
+import { CgShoppingCart } from 'react-icons/cg'
 import { useStateContext } from '../../context/StateContext';
 import Link from 'next/link';
-const ProductDetails = ({products, product}) => {
+
+const ProductDetails = ({ products, product }) => {
     const { image, name, details, price, tags, care, size } = product;
     const [index, setIndex] = useState(0);
-    const [sized,setSized]= useState(0);
-    const {decQty, incQty, qty, onAdd} = useStateContext();
+    const [sized, setSized] = useState(null);
+    const { decQty, incQty, qty, onAdd, updateSize } = useStateContext();
 
     const careList = [];
 
-
-    {for (let i = 0; i < care.length; i++) {
-        careList.push(care[i].children[0].text)
+    for (let i = 0; i < care.length; i++) {
+        careList.push(care[i].children[0].text);
     }
- 
-}
 
-useEffect(() => {
-    console.log("Sized changed:", sized);
-}, [sized]);
+    useEffect(() => {
+        console.log("Sized changed:", sized);
+        updateSize(sized);
+    }, [sized, updateSize]);
 
     return (
         <div className='products'>
@@ -48,24 +47,24 @@ useEffect(() => {
                     <div className='size'>
                         <p>SELECT SIZE</p>
                         <ul>
-                           {size?.map((item,ind)=>(<li  key={ind} onClick={() => setSized(item)} >{item}</li>)) 
-                           
-                           
+                           {Array.isArray(size) && size.map((item, ind) => (
+                           <li key={ind} onClick={() => setSized(item)}>{item}</li>
+                           )) 
                            }
                         </ul>
-                        </div>
+                    </div>
                     <div className='quantity-desc'>
                         <h4>Quantity: </h4>
                         <div>
                             <span className='minus' onClick={decQty}><AiOutlineMinus /></span>
-                            <span className='num' onClick=''>{qty}</span>
+                            <span className='num'>{qty}</span>
                             <span className='plus' onClick={incQty}><AiOutlinePlus /></span>
                         </div>
-                    </div><p className='price'>Rs.{price}</p> 
+                    </div>
+                    <p className='price'>Rs.{price}</p> 
                     <div className='add-to-cart'>
                         <button className='btn' type='button' onClick={() => onAdd(product, qty)}><CgShoppingCart size={20} />Add to Cart</button>
                         <Link href='/cart' className='btn2' type='button' onClick={() => onAdd(product, qty)}>Buy Now</Link>
-                         
                     </div>
                 </div>
             </div>
@@ -84,8 +83,8 @@ useEffect(() => {
                 <div className='desc-care'>
                     <h4>PRODUCT CARE</h4>
                     <ul>
-                    {careList.map(list => (
-                        <li>{list}</li>
+                    {careList.map((list, index) => (
+                        <li key={index}>{list}</li>
                     ))}
                     </ul>
                 </div>
@@ -93,20 +92,20 @@ useEffect(() => {
         </div>
     )
 }
-export default ProductDetails
 
-export const getStaticProps = async ({params: {slug}}) => {
+export default ProductDetails;
+
+export const getStaticProps = async ({ params: { slug } }) => {
     const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
-    const productsQuery = '*[_type == "product"]'
+    const productsQuery = '*[_type == "product"]';
     const product = await client.fetch(query);
-    const products = await client.fetch(productsQuery)
-  
+    const products = await client.fetch(productsQuery);
+
     return {
-      props: { products, product }
+        props: { products, product }
     }
 }
 
-// Generates `/product/1` and `/product/2`
 export const getStaticPaths = async () => {
     const query = `*[_type == "product"] {
         slug {
@@ -123,7 +122,7 @@ export const getStaticPaths = async () => {
     }));
 
     return {
-      paths,
-      fallback: 'blocking'
+        paths,
+        fallback: 'blocking'
     }
 }

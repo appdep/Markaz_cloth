@@ -7,7 +7,7 @@ import { useStateContext } from '../../context/StateContext';
 const cashon = () => {
 
    
-    const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove } = useStateContext();
+    const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove, } = useStateContext();
 
     const [formData, setFormData] = useState({ username: '', email: '', address: '', phonenumber: '' });
     const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -30,18 +30,16 @@ const cashon = () => {
             address: formData.address,
             city : formData.city,
             cartItems: cartItems.map(item => ({
-                name: item.name,
+               
                 price: item.price,
                 quantity: item.quantity,
+                name: item.name,
+                Size: item.size,
                 Subtotal: totalPrice,
-               
+                
                 // Add image details here as needed
                 // For example, if your image is stored in item.image:
-                image: item.image.map(image => ({
-                    // Assuming URL is stored in the URL field
-                    url: image.url,
-                    // You might have other fields like alt text, title, etc.
-                }))
+                
             }))
         };
 

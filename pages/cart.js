@@ -1,16 +1,16 @@
 import React, { useRef } from 'react';
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineShopping } from 'react-icons/ai';
-import {HiOutlineTrash} from 'react-icons/hi'
+import { HiOutlineTrash } from 'react-icons/hi';
 import toast from 'react-hot-toast';
 import { useStateContext } from '../context/StateContext';
 import { urlFor } from '../lib/client';
 import getStripe from '../lib/getStripe';
 import Link from 'next/link';
-import { HiMenuAlt4, HiX } from 'react-icons/hi';
+import { HiX } from 'react-icons/hi';
 
 const Cart = () => {
   const cartRef = useRef();
-  const {cartItems,setShowCart, totalPrice, totalQty, onRemove, toggleCartItemQuantity} = useStateContext();
+  const { cartItems, setShowCart, totalPrice, totalQty, onRemove, toggleCartItemQuantity } = useStateContext();
 
   const handleCheckout = async () => {
     const stripe = await getStripe();
@@ -47,10 +47,8 @@ const Cart = () => {
               <h1>Your shopping bag is empty</h1>
               
               <Link href="/" className='btn'>
-             
                 Continue Shopping
-             
-            </Link>
+              </Link>
             </div>
           )}
 
@@ -62,11 +60,13 @@ const Cart = () => {
               <div className='item-details'>
                 <div className='name-and-remove'>
                   <h3>{item.name}</h3> 
-                 {/* <h4 >{item?.size}</h4> */}
+              
+                  
                   <button type='button' onClick={() => onRemove(item)} className='remove-item'>
                   <HiOutlineTrash size={28} />  
                   </button>
                 </div>
+                <h4><pre> Size: {item.size}</pre></h4> 
                 <p className='item-tag'>Dress</p>
                 <p className='delivery-est'>Delivery Estimation</p>
                 <p className='delivery-days'>5 Working Days</p>
@@ -74,13 +74,13 @@ const Cart = () => {
                   <span className='price'>PKR.{item.price * item.quantity}</span>  
                   <div>
                     <span className='minus' onClick={() => toggleCartItemQuantity(item._id, 'dec')}><AiOutlineMinus /></span>
-                    <span className='num' onClick=''>{item.quantity}</span>
+                    <span className='num'>{item.quantity}</span>
                     <span className='plus' onClick={() => toggleCartItemQuantity(item._id, 'inc')}><AiOutlinePlus /></span>
                   </div>   
                 </div>
               </div>
             </div>
-            ))}    
+          ))}    
         </div>
 
         {cartItems.length >= 1 && (
@@ -94,19 +94,9 @@ const Cart = () => {
             <p>Sub Total</p>
             <span>Rs.{totalPrice}</span>
           </div>
-          {/* <div className='total'>
-            <p>Total</p>
-            <span>${totalPrice}</span>
-          </div>  */}
-          {/*<div>
-            <button className='btn' type='button' onClick={handleCheckout}>Process to Checkout</button>
-        </div>  */}
           <Link href='/cashondelivary/cashon' className='btn'>
-          <div>
-         cash on delivary
-          </div>   
+            <div>cash on delivary</div>   
           </Link>
-
         </div>
         )}  
 
@@ -115,4 +105,4 @@ const Cart = () => {
   )
 }
 
-export default Cart
+export default Cart;

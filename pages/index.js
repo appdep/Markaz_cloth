@@ -1,12 +1,16 @@
 import React from 'react';
 import { client } from '../lib/client';
-import { HeroBanner, EventsBanner, Newsletter, FeaturesBanner, Product } from '../components';
-
+import { HeroBanner, EventsBanner, Newsletter, FeaturesBanner, Product,SwipeableTextMobileStepper } from '../components';
+import Link from 'next/link'
 const Home = ({ products, bannerData, event1Data, event2Data, event3Data }) => {
   return (
     <>
+    <SwipeableTextMobileStepper/>
+     
       <div className='products-outer-container'>
-        
+      <Link href='/products' style={{position:'absolute',right:'7%', background:'black' ,color:'white' ,padding:'10px',borderRadius:'20px'}}>show more</Link>
+        <h2 style={{alignItems:'center',justifyContent:'center' }}>select product</h2>
+       
         <div className='products-container'>
           {products?.map((product) => (
             <Product key={product._id} product={product} />

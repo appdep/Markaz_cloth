@@ -10,3 +10,5 @@ export { default as Menubar} from './Menubar'
 export {default as Menubar2} from './Menubar2';
 export { default as Updates } from './Updates';
 export { default as Layout } from './Layout';
+
+export { default as SwipeableTextMobileStepper } from './SwipeableTextMobileStepper';

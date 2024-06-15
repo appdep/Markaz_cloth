@@ -6,6 +6,7 @@ import clothlogo from '../src/assets/clothlogo.png'
 import mylogo2 from '../src/assets/mylogo2.png'
 import Link from 'next/link'
 import {RiMenu3Line,RiArrowLeftLine, RiCloseLine } from 'react-icons/ri';
+import { FiMenu } from "react-icons/fi";
 import { useStateContext } from '../context/StateContext';
 
 const Navbar = ({Searchproducts}) => {
@@ -50,7 +51,7 @@ const Navbar = ({Searchproducts}) => {
       }
 
       <div className='navbar-smallscreen'>
-        <RiMenu3Line color='black' fontSize={27} onClick={() => setToggleMenu(true)} />
+        <FiMenu color='black' fontSize={27} onClick={() => setToggleMenu(true)} />
        {/*Mobile cart*/}
        <div className='mobile-cart'> <Link href='/cart'>
                   <button className='cart-small-screen' onClick={() => setShowCart(false)}>   

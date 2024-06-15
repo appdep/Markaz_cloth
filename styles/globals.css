@@ -7,6 +7,7 @@
  
 }
 
+
 html,
 body {
   max-width: 100vw;
@@ -27,6 +28,16 @@ nav li,.navbar-smallscreen_links {
   list-style: none;
   
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 .btn {
   font-family: 'Sora', sans-serif;
   font-weight: 600;
@@ -150,7 +161,7 @@ nav input {
   right: 5px;
   font-size: 12px;
   color: #eee;
-  background-color: #f02d34;
+  background-color: black;
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -414,8 +425,9 @@ nav input {
   transition: transform 0.5s ease;
 }
 .product-card img {
-  width: 350px;
-  height: 400px;
+  width: 290px;
+  height: 310px;
+  border-radius: 30px;
   border: 1px solid black;
   background-color: #474747;
   cursor: pointer;
@@ -582,10 +594,12 @@ nav input {
 .add-to-cart .btn {
   font-size: 0.875rem;
   width: 40%;
+  border-radius: 50px;
 } 
 .add-to-cart .btn2 {
   font-size: 0.875rem;
   width: 40%;
+  border-radius: 50px;
 } 
 .add-to-cart .price {
   font-weight: 700;
@@ -1227,8 +1241,9 @@ top:0px;
   }
   /*-------------------- PRODUCTS SECTION ------------------*/
   .product-card img {
-    width: 380px;
-    height: 400px;
+    width: 270px;
+    height: 290px;
+    border-radius: 30px;
   }
   /*-------------------- FEATURES SECTION ------------------*/
   .features-section .title h1 {
@@ -1360,12 +1375,13 @@ top:0px;
   }
   /*-------------------- PRODUCTS SECTION ------------------*/
   .product-card img {
-    width: 337px;
-    height: 350px;
+    width: 200px;
+    height: 210px;
+    border-radius: 30px;
 
    @media screen and (max-width:410px) {
-    width: 300px;
-    height: 345px;
+    width: 190px;
+    height: 200px;
 
    }
   }

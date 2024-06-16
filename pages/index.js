@@ -9,7 +9,7 @@ const Home = ({ products, bannerData, event1Data, event2Data, event3Data }) => {
      
       <div className='products-outer-container'>
       <Link href='/products' style={{position:'absolute',right:'7%', background:'black' ,color:'white' ,padding:'10px',borderRadius:'20px'}}>show more</Link>
-        <h2 style={{alignItems:'center',justifyContent:'center' }}>select product</h2>
+        <h2 style={{alignItems:'center',justifyContent:'center' }}>select cloths</h2>
        
         <div className='products-container'>
           {products?.map((product) => (

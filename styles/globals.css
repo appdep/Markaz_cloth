@@ -132,7 +132,7 @@ top:0px;
 .search-bar {
   display: flex;
   align-items: center;
-  width: 30%;
+  width: 20%;
   border: 1px solid #e4e5eb;
   border-radius: 5px;
   padding: 0 5px;
@@ -150,6 +150,9 @@ nav input {
   border:none;
   position: relative;
   bottom: 7px;
+  @media screen and (max-width: 1024px){
+     right: 8%;
+  }
   transition: transform .4s ease;
 }
 .cart:hover, .cart-small-screen:hover{
@@ -426,8 +429,8 @@ nav input {
 }
 .product-card img {
   width: 290px;
-  height: 310px;
-  border-radius: 30px;
+  height: 330px;
+  border-radius: 20px;
   border: 1px solid black;
   background-color: #474747;
   cursor: pointer;
@@ -1242,8 +1245,8 @@ top:0px;
   /*-------------------- PRODUCTS SECTION ------------------*/
   .product-card img {
     width: 270px;
-    height: 290px;
-    border-radius: 30px;
+    height: 310px;
+    border-radius: 20px;
   }
   /*-------------------- FEATURES SECTION ------------------*/
   .features-section .title h1 {
@@ -1376,8 +1379,8 @@ top:0px;
   /*-------------------- PRODUCTS SECTION ------------------*/
   .product-card img {
     width: 200px;
-    height: 210px;
-    border-radius: 30px;
+    height: 240px;
+    border-radius: 20px;
 
    @media screen and (max-width:410px) {
     width: 190px;

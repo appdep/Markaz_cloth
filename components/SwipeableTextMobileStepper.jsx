@@ -92,8 +92,12 @@ function SwipeableTextMobileStepper({ initialImages }) {
         width: '100vw',
         height: {
           xs: '30vh',
-           sm:'70vh',// height for mobile devices
-          md: '100vh', // height for larger devices
+           sm:'40vh',// height for mobile devices
+          md: '100vh',// height for larger devices
+        '@media (min-width: 911px) and (max-width: 1024px)': {
+            height: '43vh', // height for iPad
+          },
+      
         },
         display: 'flex',
         flexDirection: 'column',

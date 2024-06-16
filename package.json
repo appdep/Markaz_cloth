@@ -26,8 +26,9 @@
     "next": "13.1.0",
     "next-sanity-image": "^5.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.2.",
     "react-draggable": "^4.4.6",
+
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.7.1",
     "react-slick": "^0.30.2",
